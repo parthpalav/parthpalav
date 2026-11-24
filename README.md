@@ -10,4 +10,6 @@
 
 <a href="https://github.com/parthpalav/Orion_Datathon"><img src="assets/work-orion.svg" width="100%" alt="ORION, a traffic intelligence prototype for route comparison and congestion estimates."/></a>
 
+<img src="assets/stack.svg" width="100%" alt="Stack. Languages: TypeScript, Python, JavaScript, Java, C++, C, PHP, SQL. Frontend: React, React Native, Expo. Backend: Node.js, Express, FastAPI, Socket.IO. AI and ML: PyTorch, scikit-learn, XGBoost, CatBoost, OpenCV, YOLOv8, Hugging Face. Data and cloud: MongoDB, PostgreSQL, MySQL, Docker, AWS. Security: Burp Suite, Nmap, Wireshark, Nessus."/>
+
 <img src="assets/status.svg" width="100%" alt="Open to full-time roles from December 2026"/>

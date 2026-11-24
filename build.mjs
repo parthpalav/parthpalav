@@ -18,6 +18,15 @@ const data = {
   ],
   thread: ['Understand the need', 'Build the system', 'Test it properly', 'See it delivered'],
   status: 'Open to full-time roles from December 2026',
+  // Most-used first. Each item is backed by a project or lab in the portfolio's skillUses.
+  stack: [
+    ['Languages', ['TypeScript', 'Python', 'JavaScript', 'Java', 'C++', 'C', 'PHP', 'SQL']],
+    ['Frontend', ['React', 'React Native', 'Expo', 'HTML / CSS']],
+    ['Backend', ['Node.js', 'Express', 'FastAPI', 'Socket.IO', 'REST APIs']],
+    ['AI & ML', ['PyTorch', 'scikit-learn', 'XGBoost', 'CatBoost', 'OpenCV', 'YOLOv8', 'Hugging Face']],
+    ['Data & cloud', ['MongoDB', 'PostgreSQL', 'MySQL', 'Docker', 'AWS']],
+    ['Security', ['Burp Suite', 'Nmap', 'Wireshark', 'Nessus']],
+  ],
   work: [
     {
       slug: 'finaura',
@@ -106,6 +115,19 @@ ${sumSvg}
   return svg(ry + 106, body, p.title + p.summary, p.sub)
 }
 
+function stack() {
+  const rows = data.stack.map(([k, vs], i) => {
+    const y = 96 + i * 36
+    const items = vs.map(esc).join('<tspan class="dot">  ·  </tspan>')
+    return `<text x="40" y="${y}" class="m stone">${esc(k)}</text><text x="190" y="${y + 1}" class="s ink" font-size="18" xml:space="preserve">${items}</text>`
+  }).join('\n')
+  const h = 96 + data.stack.length * 36
+  const body = `<text x="40" y="50" class="m stone"><tspan class="acc">Stack</tspan>  ·  used in the work above</text>
+<line x1="40" y1="66" x2="${W - 40}" y2="66" stroke="${t.rule}"/>
+${rows}`
+  return svg(h, body, data.stack.flatMap(([, vs]) => vs).join('') + ' ·')
+}
+
 const strip = (inner) => `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="48" viewBox="0 0 ${W} 48" role="img">
 <style>.m{font-family:${MONO};font-size:11px;letter-spacing:.08em;text-transform:uppercase}</style>
 <rect x=".5" y=".5" width="${W - 1}" height="47" rx="12" fill="${t.bg}" stroke="${t.rule}"/>
@@ -174,5 +196,6 @@ const out = (name, s) => writeFileSync(`assets/${name}.svg`, s)
 out('hero', terminal())
 out('label-work', label('Selected work'))
 data.work.forEach((p, i) => out(`work-${p.slug}`, card(p, i + 1)))
+out('stack', stack())
 out('status', status())
 console.log('built assets/')

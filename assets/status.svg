@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="48" viewBox="0 0 840 48" role="img">
+<style>.m{font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase}</style>
+<rect x=".5" y=".5" width="839" height="47" rx="12" fill="#0b0b0a" stroke="#2a2925"/>
+<circle cx="44" cy="24" r="4" fill="#e4572e"><animate attributeName="opacity" values="1;.25;1" dur="2.4s" repeatCount="indefinite"/></circle>
+<text x="58" y="28" class="m" fill="#f3f0e9">Open to full-time roles from December 2026</text>
+<text x="800" y="28" text-anchor="end" class="m" fill="#9a958c">www.parthpalav.xyz</text>
+</svg>
